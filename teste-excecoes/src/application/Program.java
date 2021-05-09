@@ -34,7 +34,7 @@ public class Program {
 		System.out.println("Informe o valor de saque: ");
 		acc.withdraw(read.nextDouble());
 		
-		System.out.println("Saldo atual: R$"+acc.getBalance());
+		System.out.printf("Saldo atual: R$ %.2f%n", acc.getBalance());
 	}
 
 }                       
