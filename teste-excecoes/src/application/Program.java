@@ -4,6 +4,7 @@ import java.util.Locale;
 import java.util.Scanner;
 
 import entites.Account;
+import exceptions.BusinessException;
 
 
 public class Program {
@@ -32,9 +33,16 @@ public class Program {
 		
 		
 		System.out.println("Informe o valor de saque: ");
-		acc.withdraw(read.nextDouble());
+		double amount = read.nextDouble();
 		
-		System.out.printf("Saldo atual: R$ %.2f%n", acc.getBalance());
+		try {
+			acc.withdraw(amount);
+			System.out.printf("Saldo atual: R$ %.2f%n", acc.getBalance());
+		}
+		catch (BusinessException e) {
+			System.out.println(e.getMessage());
+		}
+		
 	}
 
 }                       

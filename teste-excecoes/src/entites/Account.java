@@ -26,6 +26,7 @@ public class Account {
 	}
 	
 	public void withdraw(double amount) {
+		validateWithdraw(amount); //acionando a validateWithdraw, se passar ele realiza o saque
 		balance -= amount;
 	}
 
